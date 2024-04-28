@@ -1,2 +1,0 @@
-# Minimal API Structuring
-
