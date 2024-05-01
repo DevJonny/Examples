@@ -1,6 +1,0 @@
-@MinimalApiQueryStringBindingAndValidation_HostAddress = http://localhost:5157
-
-GET {{MinimalApiQueryStringBindingAndValidation_HostAddress}}/ping?message=Hell
-Accept: application/json
-
-###

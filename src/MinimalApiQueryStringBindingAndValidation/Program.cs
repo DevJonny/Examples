@@ -9,9 +9,14 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 
 app
-    .MapGet("/ping", ([AsParameters] Ping orderBy) => Results.Ok(orderBy.Message))
+    .MapGet("/ping", ([AsParameters] Ping orderBy) => Results.Ok(new
+    {
+        orderBy.Message,
+        orderBy.Amount,
+        orderBy.AmountString
+    }))
     .AddEndpointFilter<PingValidatorFilter<Ping>>();
 
 app.Run();
 
-public record Ping(string Message);
+public record Ping(string Message, decimal Amount, string AmountString);
